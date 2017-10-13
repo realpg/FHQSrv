@@ -26,7 +26,7 @@ class ADController
     public function index(Request $request)
     {
         $admin = $request->session()->get('admin');
-        $ads = AD::orderBy('seq', 'desc')->get();
+        $ads = AD::orderBy('seq', 'desc')->orderBy('id', 'desc')->get();
 //        dd($ads);
         return view('admin.ad.index', ['admin' => $admin, 'datas' => $ads]);
     }

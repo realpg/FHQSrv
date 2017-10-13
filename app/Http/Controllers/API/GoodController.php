@@ -27,8 +27,8 @@ class GoodController extends Controller
     function getGoodList(Request $request)
     {
         $data = $request->all();
-        $zx_infos = GoodManager::getGoodList($data);
-        return ApiResponse::makeResponse(true, $zx_infos, ApiResponse::SUCCESS_CODE);
+        $goods = GoodManager::getGoodList($data);
+        return ApiResponse::makeResponse(true, $goods, ApiResponse::SUCCESS_CODE);
     }
 
     /*
@@ -48,9 +48,8 @@ class GoodController extends Controller
         if ($requestValidationResult !== true) {
             return ApiResponse::makeResponse(false, $requestValidationResult, ApiResponse::MISSING_PARAM);
         }
-        $zx_detail_info = GoodManager::getGoodById($data);
+        $zx_detail_info = GoodManager::getGoodById($data['id']);
         return ApiResponse::makeResponse(true, $zx_detail_info, ApiResponse::SUCCESS_CODE);
     }
-
 
 }

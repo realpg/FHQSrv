@@ -48,4 +48,18 @@ Route::group(['prefix' => '', 'middleware' => ['BeforeRequest']], function () {
     //服务信息
     Route::get('good/list', 'API\GoodController@getGoodList');
     Route::get('good/getById', 'API\GoodController@getGoodById');
+
+    //企业信息
+    Route::get('enter/getListByUserId', 'API\EnterController@getListByUserId')->middleware('CheckToken');
+    Route::get('enter/getById', 'API\EnterController@getById')->middleware('CheckToken');
+    Route::post('enter/del', 'API\EnterController@del')->middleware('CheckToken');
+    Route::post('enter/edit', 'API\EnterController@edit')->middleware('CheckToken');
+
+    //支付
+    Route::post('wxpay/prepay', 'API\PayController@prepay');
+    Route::post('wxpay/temPrepay', 'API\PayController@temPrepay')->middleware('CheckToken');
+    Route::get('wxpay/getListByUserId', 'API\PayController@getListByUserId')->middleware('CheckToken');
+    Route::get('wxpay/getListByEnterId', 'API\PayController@getListByEnterId')->middleware('CheckToken');
+    Route::get('wxpay/getById', 'API\PayController@getById')->middleware('CheckToken');
+
 });

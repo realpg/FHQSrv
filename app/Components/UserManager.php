@@ -166,7 +166,7 @@ class UserManager
     public static function updateUser($data)
     {
         //配置用户信息
-        $user = self::getUserInfoByIdWithToken($data['id']);
+        $user = self::getUserInfoByIdWithToken($data['user_id']);
         $user = self::setUser($user, $data);
         $user->save();
         return $user;

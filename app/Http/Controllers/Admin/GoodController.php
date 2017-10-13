@@ -27,7 +27,7 @@ class GoodController
     public function index(Request $request)
     {
         $admin = $request->session()->get('admin');
-        $goods = Good::orderBy('seq', 'desc')->get();
+        $goods = Good::orderBy('seq', 'desc')->orderBy('id', 'desc')->get();
 //        dd($ads);
         return view('admin.good.index', ['admin' => $admin, 'datas' => $goods]);
     }

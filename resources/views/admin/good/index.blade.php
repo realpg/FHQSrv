@@ -53,13 +53,13 @@
                                     </td>
                                     <td>
                                         <a href="{{URL::asset('/admin/good/setStatus')}}/{{$data->id}}?opt=1"
-                                           class="a-pointer" onclick="showTip();">生效&nbsp&nbsp</a>
+                                           class="a-pointer" onclick="showTip();">生效&nbsp;&nbsp;</a>
                                         <a href="{{URL::asset('/admin/good/setStatus')}}/{{$data->id}}?opt=0"
-                                           class="a-pointer margin-right-10" onclick="showTip();">失效&nbsp&nbsp</a>
+                                           class="a-pointer margin-right-10" onclick="showTip();">失效&nbsp;&nbsp;</a>
                                         <a href="{{URL::asset('/admin/tw/edit')}}?f_id={{$data->id}}&f_type=1"
-                                           class="a-pointer margin-right-10" onclick="showTip();">设置图文&nbsp&nbsp</a>
+                                           class="a-pointer margin-right-10" onclick="showTip();">设置图文&nbsp;&nbsp;</a>
                                         <a href="{{URL::asset('/admin/good/edit')}}?id={{$data->id}}"
-                                           class="a-pointer margin-right-10" onclick="showTip();">编辑&nbsp&nbsp</a>
+                                           class="a-pointer margin-right-10" onclick="showTip();">编辑&nbsp;&nbsp;</a>
                                         <a href="{{URL::asset('/admin/good/del')}}/{{$data->id}}" class="a-pointer"
                                            onclick="showTip();">删除</a>
 

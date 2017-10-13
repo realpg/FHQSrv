@@ -76,4 +76,11 @@ class ZXManager
         $result->tw_steps = $tw_steps;
         return $result;
     }
+
+    //增加资讯展示数
+    public static function addShowNum($id)
+    {
+        $result = ZX::where('id', '=', $id)
+            ->increment('show_num');
+    }
 }

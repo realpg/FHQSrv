@@ -49,6 +49,8 @@ class ZXController extends Controller
             return ApiResponse::makeResponse(false, $requestValidationResult, ApiResponse::MISSING_PARAM);
         }
         $zx_detail_info = ZXManager::getZXById($data);
+        ZXManager::addShowNum($data['id']); //展示次数加1
+
         return ApiResponse::makeResponse(true, $zx_detail_info, ApiResponse::SUCCESS_CODE);
     }
 

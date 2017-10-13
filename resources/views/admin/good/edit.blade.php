@@ -40,7 +40,15 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="price" class="col-sm-2 control-label">*价格</label>
+                                <label for="show_price" class="col-sm-2 control-label">展示价格</label>
+                                <div class="col-sm-10">
+                                    <input id="show_price" name="show_price" type="text" class="form-control"
+                                           placeholder="例如 3000元/年"
+                                           value="{{ isset($data->show_price) ? $data->show_price : '' }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="price" class="col-sm-2 control-label">*实际售价</label>
 
                                 <div class="col-sm-10">
                                     <input id="price" name="price" type="number" class="form-control"

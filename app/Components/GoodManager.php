@@ -27,6 +27,9 @@ class GoodManager
         if (array_key_exists('title', $data)) {
             $good->title = array_get($data, 'title');
         }
+        if (array_key_exists('show_price', $data)) {
+            $good->show_price = array_get($data, 'show_price');
+        }
         if (array_key_exists('price', $data)) {
             $good->price = array_get($data, 'price');
         }
@@ -52,7 +55,7 @@ class GoodManager
     }
 
 
-    //获取资讯列表
+    //获取服务列表
     public static function getGoodList($data)
     {
         //获取有效服务:
@@ -65,11 +68,11 @@ class GoodManager
         return $good_infos;
     }
 
-    //根据id获取咨询详情
-    public static function getGoodById($data)
+    //根据id获取服务详情
+    public static function getGoodById($id)
     {
-        $good_info = Good::where('id', '=', $data['id'])->first();
-        $tw_steps = TWStep::where('f_id', '=', $data['id'])->where('f_type', '=', '1')->get();
+        $good_info = Good::where('id', '=', $id)->first();
+        $tw_steps = TWStep::where('f_id', '=', $id)->where('f_type', '=', '1')->get();
         $result = new GoodDetailView();
         $result->good_info = $good_info;
         $result->tw_steps = $tw_steps;

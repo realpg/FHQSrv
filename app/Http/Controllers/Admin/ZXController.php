@@ -28,7 +28,7 @@ class ZXController
     public function index(Request $request)
     {
         $admin = $request->session()->get('admin');
-        $zxs = ZX::orderBy('seq', 'desc')->get();
+        $zxs = ZX::orderBy('seq', 'desc')->orderBy('id', 'desc')->get();
 //        dd($ads);
         return view('admin.zx.index', ['admin' => $admin, 'datas' => $zxs]);
     }

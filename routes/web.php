@@ -60,4 +60,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.login']], function ()
     Route::get('/tw/edit', 'Admin\TWStepController@edit');  //图文编辑页面
     Route::post('/tw/edit', 'Admin\TWStepController@editPost');  //图文编辑页面
 
+    //企业管理
+    Route::get('/enter/index', 'Admin\EnterController@index');  //企业管理首页
+    Route::post('/enter/index', 'Admin\EnterController@search');  //根据企业名称搜索
+    Route::get('/enter/info', 'Admin\EnterController@info');  //根据id获取企业详细信息
+
+    //用户管理
+    Route::get('/user/index', 'Admin\UserController@index');  //用户管理首页
+    Route::post('/user/index', 'Admin\UserController@search');  //根据用户名称搜索
+    Route::get('/user/info', 'Admin\UserController@info');  //根据id获取用户详细信息
+
 });
