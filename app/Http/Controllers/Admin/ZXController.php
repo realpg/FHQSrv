@@ -89,6 +89,8 @@ class ZXController
         //专门处理role
         if (array_key_exists('flag', $data)) {
             $data['flag'] = '1';
+        } else {
+            $data['flag'] = '0';
         }
         $zx = new ZX();
         //存在id是保存

@@ -39,7 +39,6 @@ class ApiResponse
         self::TOKEN_LOST => '缺少token',
         self::TOKEN_ERROR => 'token校验失败',
         self::USER_ID_LOST => '缺少用户编码',
-        self::USER_ID_LOST => '新建用户失败',
         self::NO_USER => '未找到用户',
         self::REGISTER_FAILED => '注册失败'
     ];

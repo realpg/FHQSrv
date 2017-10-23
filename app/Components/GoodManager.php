@@ -27,6 +27,9 @@ class GoodManager
         if (array_key_exists('title', $data)) {
             $good->title = array_get($data, 'title');
         }
+        if (array_key_exists('desc', $data)) {
+            $good->desc = array_get($data, 'desc');
+        }
         if (array_key_exists('show_price', $data)) {
             $good->show_price = array_get($data, 'show_price');
         }

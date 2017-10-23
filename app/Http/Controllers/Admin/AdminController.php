@@ -80,6 +80,10 @@ class AdminController
             $admin = Admin::find($data['id']);
         }
         $admin = AdminManager::setAdmin($admin, $data);
+        //如果不存在id代表新建，则默认设置密码
+        if (!array_key_exists('id', $data)) {
+            $admin->password = 'afdd0b4ad2ec172c586e2150770fbf9e';  //该password为Aa123456的码
+        }
         $admin->save();
         return redirect('/admin/admin/index');
     }

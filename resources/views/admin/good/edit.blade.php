@@ -40,6 +40,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="desc" class="col-sm-2 control-label">*描述</label>
+                                <div class="col-sm-10">
+                                    <input id="desc" name="desc" type="text" class="form-control"
+                                           placeholder="请输入简要描述" value="{{ isset($data->desc) ? $data->desc : '' }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="show_price" class="col-sm-2 control-label">展示价格</label>
                                 <div class="col-sm-10">
                                     <input id="show_price" name="show_price" type="text" class="form-control"
