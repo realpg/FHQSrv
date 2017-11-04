@@ -23,6 +23,9 @@ Route::group(['prefix' => '', 'middleware' => ['BeforeRequest']], function () {
     // 示例接口
     Route::get('test', 'API\TestController@test');
 
+    //获取七牛token
+    Route::get('user/getQiniuToken', 'API\UserController@getQiniuToken');
+
     //根据id获取用户信息
     Route::get('user/getById', 'API\UserController@getUserById');
     //根据id获取用户信息带token

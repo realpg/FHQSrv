@@ -17,12 +17,30 @@ use App\Libs\wxDecode\WXBizDataCrypt;
 use App\Models\ViewModels\HomeView;
 use Illuminate\Http\Request;
 use App\Components\RequestValidator;
+use Qiniu\Auth;
 
 class UserController extends Controller
 {
 
     const APPID = "wx07fc3214de557db6";
     const APPSECRET = "f840ff7278f22ae4208f75af156057f0";
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getQiniuToken(Request $request)
+    {
+        $accessKey = 'JXanCoTnAoyJd4WclS-zPhA8JmWooPTqvK5RCHXb';
+        $secretKey = 'ouc-dLEY42KijHeUaTzTBzFeM2Q1mKk_M_3vNpmT';
+
+        $auth = new Auth($accessKey, $secretKey);
+
+        $bucket = 'dsyy';
+        $upToken = $auth->uploadToken($bucket);
+
+        return ApiResponse::makeResponse(true, $upToken, ApiResponse::SUCCESS_CODE);
+    }
 
 
     /*
