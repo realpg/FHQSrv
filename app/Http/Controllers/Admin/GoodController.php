@@ -55,11 +55,11 @@ class GoodController
     }
 
 
-    //删除资讯
+    //删除服务
     public function del(Request $request, $id)
     {
         if (is_numeric($id) !== true) {
-            return redirect()->action('\App\Http\Controllers\Admin\IndexController@error', ['msg' => '合规校验失败，请检查参数资讯id$id']);
+            return redirect()->action('\App\Http\Controllers\Admin\IndexController@error', ['msg' => '合规校验失败，请检查参数服务id$id']);
         }
         $good = Good::find($id);
         $good->delete();
@@ -67,7 +67,7 @@ class GoodController
     }
 
 
-    //新建或编辑资讯-get
+    //新建或编辑服务-get
     public function edit(Request $request)
     {
         $data = $request->all();
@@ -81,7 +81,7 @@ class GoodController
         return view('admin.good.edit', ['admin' => $admin, 'data' => $good, 'upload_token' => $upload_token]);
     }
 
-    //新建或编辑资讯->post
+    //新建或编辑服务->post
     public function editPost(Request $request)
     {
         $data = $request->all();

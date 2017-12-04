@@ -15,6 +15,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Components\RequestValidator;
 
+
 class GoodController extends Controller
 {
     /*

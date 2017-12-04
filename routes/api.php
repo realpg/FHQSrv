@@ -59,8 +59,8 @@ Route::group(['prefix' => '', 'middleware' => ['BeforeRequest']], function () {
     Route::post('enter/edit', 'API\EnterController@edit')->middleware('CheckToken');
 
     //支付
-    Route::post('wxpay/prepay', 'API\PayController@prepay');
-    Route::post('wxpay/temPrepay', 'API\PayController@temPrepay')->middleware('CheckToken');
+    Route::post('wxpay/prepay', 'API\PayController@prepay')->middleware('CheckToken');
+    Route::post('wxpay/notify', 'API\PayController@notify');
     Route::get('wxpay/getListByUserId', 'API\PayController@getListByUserId')->middleware('CheckToken');
     Route::get('wxpay/getListByEnterId', 'API\PayController@getListByEnterId')->middleware('CheckToken');
     Route::get('wxpay/getById', 'API\PayController@getById')->middleware('CheckToken');

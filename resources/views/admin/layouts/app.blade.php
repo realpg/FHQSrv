@@ -71,7 +71,7 @@
                             <!-- User image -->
                             <!-- User image -->
                             <li class="user-header" style="height: 145px;">
-                                <img src="{{ $admin->avatar ? $admin->avatar.'?imageView2/1/w/200/h/200/interlace/1/q/75|imageslim': URL::asset('/img/logo.png')}}"
+                                <img src="{{ $admin->avatar ? $admin->avatar.'?imageView2/1/w/200/h/200/interlace/1/q/75|imageslim': URL::asset('/img/')}}"
                                      class="img-circle" alt="User Image">
                                 <div style="color: white;margin-top: 10px;">
                                     {{$admin->nick_name}}
@@ -118,7 +118,7 @@
                 <li><a href="{{url('/admin/admin/index')}}"><i class="fa fa-key"></i> <span>管理员</span></a></li>
                 <li class="header">业务管理</li>
                 <li><a href="{{url('/admin/enter/index')}}"><i class="fa fa-hacker-news"></i> <span>企业管理</span></a></li>
-                <li><a href="#"><i class="fa fa-hacker-news"></i> <span>订单管理</span></a></li>
+                <li><a href="{{url('/admin/order/index')}}"><i class="fa fa-hacker-news"></i> <span>订单管理</span></a></li>
                 <li><a href="{{url('/admin/user/index')}}"><i class="fa fa-users"></i> <span>用户管理</span></a></li>
                 <li><a href="#"><i class="fa fa-area-chart"></i> <span>业务报表</span></a></li>
             </ul>

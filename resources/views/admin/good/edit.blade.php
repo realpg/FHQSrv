@@ -4,7 +4,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            <small>新建/编辑资讯</small>
+            <small>新建/编辑服务</small>
         </h1>
         <ol class="breadcrumb">
 
@@ -31,6 +31,16 @@
                                            value="{{ isset($data->id) ? $data->id : '' }}">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="type" class="col-sm-2 control-label">*类型</label>
+
+                                <div class="col-sm-10">
+                                    <select id="type" name="type" class="form-control">
+                                        <option value="0" {{$data->type=='0'?'selected':''}}>办公区商品</option>
+                                        <option value="1" {{$data->type=='1'?'selected':''}}>办理类商品</option>
+                                    </select>
+                                </div>
+                            </div>
 
                             <div class="form-group">
                                 <label for="title" class="col-sm-2 control-label">*标题</label>
@@ -44,6 +54,13 @@
                                 <div class="col-sm-10">
                                     <input id="desc" name="desc" type="text" class="form-control"
                                            placeholder="请输入简要描述" value="{{ isset($data->desc) ? $data->desc : '' }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="desc" class="col-sm-2 control-label">地址</label>
+                                <div class="col-sm-10">
+                                    <input id="addr" name="addr" type="text" class="form-control"
+                                           placeholder="请输入办公区地址" value="{{ isset($data->addr) ? $data->addr : '' }}">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -85,17 +102,6 @@
                                            value="{{ isset($data->seq) ? $data->seq : 0 }}">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="type" class="col-sm-2 control-label">*类型</label>
-
-                                <div class="col-sm-10">
-                                    <select id="type" name="type" class="form-control">
-                                        <option value="0" {{$data->type=='0'?'selected':''}}>办公区商品</option>
-                                        <option value="1" {{$data->type=='1'?'selected':''}}>办理类商品</option>
-                                    </select>
-                                </div>
-                            </div>
-
 
                             <div class="form-group">
                                 <label for="img" class="col-sm-2 control-label">*封皮</label>

@@ -64,10 +64,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.login']], function ()
     Route::get('/enter/index', 'Admin\EnterController@index');  //企业管理首页
     Route::post('/enter/index', 'Admin\EnterController@search');  //根据企业名称搜索
     Route::get('/enter/info', 'Admin\EnterController@info');  //根据id获取企业详细信息
+    Route::get('/enter/del/{id}', 'Admin\EnterController@del');  //删除企业
 
     //用户管理
     Route::get('/user/index', 'Admin\UserController@index');  //用户管理首页
     Route::post('/user/index', 'Admin\UserController@search');  //根据用户名称搜索
     Route::get('/user/info', 'Admin\UserController@info');  //根据id获取用户详细信息
+
+    //订单管理
+    Route::get('/order/index', 'Admin\OrderController@index');  //订单管理首页
+    Route::post('/order/index', 'Admin\OrderController@search');  //根据订单名称搜索
+    Route::get('/order/info', 'Admin\OrderController@info');  //根据id获取订单详细信息
 
 });
