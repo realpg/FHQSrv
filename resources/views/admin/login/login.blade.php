@@ -38,7 +38,6 @@
 <div class="login-box">
     <div class="login-logo">
         <a href="">
-            <img src="{{URL::asset('img/logo.png')}}" style="width: 36px;height: 36px;">
             <span style="color: white; font-family:'Microsoft YaHei' !important;">孵化器管理后台</span>
         </a>
     </div>
