@@ -66,6 +66,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.login']], function ()
     Route::get('/enter/info', 'Admin\EnterController@info');  //根据id获取企业详细信息
     Route::get('/enter/del/{id}', 'Admin\EnterController@del');  //删除企业
 
+    Route::get('/enter/lice_img', 'Admin\EnterController@lice_img');  //下载营业执照图片
+    Route::get('/enter/tax_img', 'Admin\EnterController@tax_img');  //下载税务登记图片
+    Route::get('/enter/owner_card1', 'Admin\EnterController@owner_card1');  //下载证件照片图片
+    Route::get('/enter/owner_card2', 'Admin\EnterController@owner_card2');  //下载证件照片2图片
+
     //用户管理
     Route::get('/user/index', 'Admin\UserController@index');  //用户管理首页
     Route::post('/user/index', 'Admin\UserController@search');  //根据用户名称搜索
@@ -76,4 +81,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.login']], function ()
     Route::post('/order/index', 'Admin\OrderController@search');  //根据订单名称搜索
     Route::get('/order/info', 'Admin\OrderController@info');  //根据id获取订单详细信息
 
+    Route::get('/enter/export','Admin\EnterController@export');//打印单个企业信息
+    Route::get('/enter/exportAllEnter',['as' => 'exportAllEnter', 'uses' => 'Admin\EnterController@exportAllEnter']);//打印所有企业信息
 });

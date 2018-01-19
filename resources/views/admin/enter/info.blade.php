@@ -24,16 +24,21 @@
                     </div>
                     <div class="box-body">
                         <ul class="list-group">
+                            <li class="list-group-item">创建时间：{{$datas->created_at}}</li>
                             <li class="list-group-item">地址：{{$datas->address}}</li>
                             <li class="list-group-item">邮编：{{$datas->code}}</li>
                             <li class="list-group-item">营业执照：
                                 <img src="{{$datas->lice_img.'?imageView2/1/w/400/interlace/1/q/75|imageslim'}}"
                                      style="width: 300px;">
+                                <a href="{{URL::asset('/admin/enter/lice_img')}}?id={{$datas->id}}"
+                                   class="a-pointer margin-right-10">下载</a>
                             </li>
                             <li class="list-group-item">税号：{{$datas->tax_code}}</li>
                             <li class="list-group-item">税务登记：
                                 <img src="{{$datas->tax_img.'?imageView2/1/w/400/interlace/1/q/75|imageslim'}}"
                                      style="width: 300px;">
+                                <a href="{{URL::asset('/admin/enter/tax_img')}}?id={{$datas->id}}"
+                                   class="a-pointer margin-right-10">下载</a>
                             </li>
                             <li class="list-group-item">法人姓名：{{$datas->owner}}</li>
                             <li class="list-group-item">法人身份证：{{$datas->owner_no}}</li>
@@ -41,10 +46,14 @@
                             <li class="list-group-item">证件照片：
                                 <img src="{{$datas->owner_card1.'?imageView2/1/w/400/interlace/1/q/75|imageslim'}}"
                                      style="width: 300px;">
+                                <a href="{{URL::asset('/admin/enter/owner_card1')}}?id={{$datas->id}}"
+                                   class="a-pointer margin-right-10">下载</a>
                             </li>
                             <li class="list-group-item">证件照片：
                                 <img src="{{$datas->owner_card2.'?imageView2/1/w/400/interlace/1/q/75|imageslim'}}"
                                      style="width: 300px;">
+                                <a href="{{URL::asset('/admin/enter/owner_card2')}}?id={{$datas->id}}"
+                                   class="a-pointer margin-right-10">下载</a>
                             </li>
                         </ul>
                     </div>

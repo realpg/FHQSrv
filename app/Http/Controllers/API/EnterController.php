@@ -78,8 +78,6 @@ class EnterController extends Controller
         }
         return ApiResponse::makeResponse(true, "删除成功", ApiResponse::SUCCESS_CODE);
     }
-
-
     /*
      * 新建、编辑企业信息
      *
@@ -106,5 +104,4 @@ class EnterController extends Controller
         $enter->save();
         return ApiResponse::makeResponse(true, $enter, ApiResponse::SUCCESS_CODE);
     }
-
 }
