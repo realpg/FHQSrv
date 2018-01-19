@@ -114,8 +114,8 @@ class EnterController
            $data = $request->all();
            $enter = Enter::where('id', '=', $data['id'])->get()->first();
            $client = new Client(['verify' => false]);  //忽略SSL错误
-           $response = $client->get($enter->lice_img, ['save_to' => realpath(base_path('public')).'/lice_img.jpg']); //保存远程url到文件
-           return response()->download(realpath(base_path('public')).'/lice_img.jpg', $enter->name." 企业营业执照.jpg");
+           $response = $client->get($enter->lice_img, ['save_to' => realpath(base_path('public')).'/download/lice_img.jpg']); //保存远程url到文件
+           return response()->download(realpath(base_path('public')).'/download/lice_img.jpg', $enter->name." 企业营业执照.jpg");
         }
     //打印税务登记照片
     public function tax_img(Request $request)
@@ -123,8 +123,8 @@ class EnterController
         $data = $request->all();
         $enter = Enter::where('id', '=', $data['id'])->get()->first();
         $client = new Client(['verify' => false]);  //忽略SSL错误
-        $client->get($enter->tax_img, ['save_to' => realpath(base_path('public')).'/tax_img.jpg']); //保存远程url到文件
-        return response()->download(realpath(base_path('public')).'/tax_img.jpg', $enter->name." 税务登记照片.jpg");
+        $client->get($enter->tax_img, ['save_to' => realpath(base_path('public')).'/download/tax_img.jpg']); //保存远程url到文件
+        return response()->download(realpath(base_path('public')).'/download/tax_img.jpg', $enter->name." 税务登记照片.jpg");
     }
     //打印证件照片2
     public function owner_card1(Request $request)
@@ -132,8 +132,8 @@ class EnterController
         $data = $request->all();
         $enter = Enter::where('id', '=', $data['id'])->get()->first();
         $client = new Client(['verify' => false]);  //忽略SSL错误
-        $client->get($enter->owner_card1, ['save_to' => realpath(base_path('public')).'/owner_card1.jpg']); //保存远程url到文件
-        return response()->download(realpath(base_path('public')).'/owner_card1.jpg', $enter->name." 证件照片1.jpg");
+        $client->get($enter->owner_card1, ['save_to' => realpath(base_path('public')).'/download/owner_card1.jpg']); //保存远程url到文件
+        return response()->download(realpath(base_path('public')).'/download/owner_card1.jpg', $enter->name." 证件照片1.jpg");
     }
     //打印证件照片2
     public function owner_card2(Request $request)
@@ -142,6 +142,6 @@ class EnterController
         $enter = Enter::where('id', '=', $data['id'])->get()->first();
         $client = new Client(['verify' => false]);  //忽略SSL错误
         $client->get($enter->owner_card2, ['save_to' => realpath(base_path('public')).'/download/owner_card2.jpg']); //保存远程url到文件
-        return response()->download(realpath(base_path('public')).'/owner_card2.jpg', $enter->name." 证件照片2.jpg");
+        return response()->download(realpath(base_path('public')).'/download/owner_card2.jpg', $enter->name." 证件照片2.jpg");
     }
 }
